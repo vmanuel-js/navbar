@@ -57,4 +57,37 @@
 
     <script src="script.js"></script>
   </body>
+  <link
+    href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+    rel="stylesheet"
+  />
+  <script type="module">
+    import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+
+    createChat({
+      webhookUrl:
+        "https://mjordan.app.n8n.cloud/webhook/b7509b05-43b1-48f3-8828-ff33d58b2cf9/chat",
+      webhookConfig: {
+        method: "POST",
+        headers: {},
+      },
+      target: "#n8n-chat",
+      mode: "window",
+      chatInputKey: "chatInput",
+      chatSessionKey: "sessionId",
+      metadata: {},
+      showWelcomeScreen: false,
+      defaultLanguage: "es",
+      initialMessages: [],
+      i18n: {
+        es: {
+          title: "Hola",
+          subtitle: "Bienvenido a FDP Centro de Belleza",
+          footer: "",
+          getStarted: "New Conversation",
+          inputPlaceholder: "mensaje...",
+        },
+      },
+    });
+  </script>
 </html>
